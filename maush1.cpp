@@ -1,54 +1,47 @@
-#include<iostream>
-#include<string.h>
+#include <iostream>
 using namespace std;
-int main() 
+class calculator
 {
-    int secretnumber=1+(rand()%100),level;
-    int choice,turnsleft;
-    
-    cout<<"enter the level of game you want"<<endl<<"1.easy(8 chances)"<<endl<<"2.medium(6 chances)"<<endl<<"3.difficult(5 chances)"<<endl;
-    
-    cin>>level;
-    
-    if(level==1)
-{
-    cout<<"you have 8 chances"<<endl;
-    turnsleft=8;}
-    
-    else {if(level==2)
-{
-    cout<<"you have 6 chances"<<endl;
-    turnsleft=6;}
-    
-    else
-{
-    cout<<"you have 3 chances"<<endl;
-    turnsleft=3;}}
-    
-    while(turnsleft>0)
-    {
-        cout<<"guess the secret number: ";
-        cin>>choice;
-        
-        if(choice==secretnumber)
-        {
-            cout<<"congratulations you won the game"<<endl<<endl;
-        break;
-        
+    float num1;
+    float num2;
+    int op;
+    public:
+    calculator(){
+        cout<<"enter num1:";
+        cin>>num1;
+        cout<<"enter num2:";
+        cin>>num2;
+        cout<<"enter operator"<<endl<<"1.add"<<endl<<"2.subtract"<<endl<<"3.multiply"<<endl<<"4.divide:"<<endl;
+        cin>>op;
+       }
+    void calculate(){
+        switch(op){
+            case 1:cout<<"Addition:"<<(num1+num2);
+            break;
+            case 2:cout<<"Subtraction:"<<(num1-num2);
+            break;
+            case 3:cout<<"Multiplication:"<<(num1*num2);
+            break;
+            case 4:cout<<"Division:"<<(num1/num2);
+            break;
         }
-        else if(choice>secretnumber)
-        {
-            cout<<"Sorry!This is a wrong choice"<<endl;
-        cout<<"Your choice is greater than the secret number"<<endl<<endl;}
+    }
+};
+
+
+int main() {
+    int y;
+    
+    do{
+        calculator c;
+        c.calculate();
         
-        else
-        {
-            cout<<"sorry this is a wrong choice"<<endl;
-        cout<<"your choice is smaller than the secret number"<<endl<<endl;}
+        cout<<endl<<"do you want to continue if yes press 1 else 0";
         
-        turnsleft--;
-        
-        cout<<"you have "<<turnsleft<<" turns left"<<endl;}
-        
-     return 0;
+        cin>>y;}
+        while(y==1);
+         return 0;
 }
+    
+        
+        
