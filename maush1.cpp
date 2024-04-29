@@ -14,15 +14,35 @@ class calculator
         cout<<"enter operator"<<endl<<"1.add"<<endl<<"2.subtract"<<endl<<"3.multiply"<<endl<<"4.divide:"<<endl;
         cin>>op;
        }
+       float addition(float a,float b){
+           return (a+b);
+       }
+       
+       float subtraction(float a,float b){
+           return (a-b);
+       }
+       
+       float multiplication(float a,float b){
+           return (a*b);
+       }
+       
+       float division(float a,float b)
+       {if(b==0){
+           cout<<"infinity";
+           
+       }
+       else{
+           return (a/b);}
+       }
     void calculate(){
         switch(op){
-            case 1:cout<<"Addition:"<<(num1+num2);
+            case 1:cout<<"Addition:"<<addition(num1,num2);
             break;
-            case 2:cout<<"Subtraction:"<<(num1-num2);
+            case 2:cout<<"Subtraction:"<<subtraction(num1,num2);
             break;
-            case 3:cout<<"Multiplication:"<<(num1*num2);
+            case 3:cout<<"Multiplication:"<<multiplication(num1,num2);
             break;
-            case 4:cout<<"Division:"<<(num1/num2);
+            case 4:cout<<"Division:"<<division(num1,num2);
             break;
         }
     }
@@ -42,6 +62,4 @@ int main() {
         while(y==1);
          return 0;
 }
-    
-        
-        
+            
